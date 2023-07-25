@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>VStream</title>
+        <style>
+            body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        
+        }
+
+        #videoContainer {
+            width: 70%;
+            max-width: 800px;
+            margin: 20px auto;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        video {
+            width: 70%;
+            height: auto;
+        }
+        #logo {
+            display: block;
+            margin: 20px auto;
+            width: 100px; /* Adjust the width of the logo as needed */
+            height: 100px; /* Adjust the height of the logo as needed */
+            border-radius: 50%;
+            background-color: #f2f2f2;
+        }
+        </style>
+    </head>
+    <body>
+       <a href="index.html"> 
+    <img id="logo" src="Database/vstreamlogo.png" alt="Logo" >
+     </a> 
+        <video id="videoPlayer" width="100%" controls muted autoplay>
+            <source id="videoSource" type="video/mp4" />
+        </video>
+        <br>
+        <button class="download-btn" onclick="downloadVideo()">Download</button>
+        <p id ="view"> </p>
+        <script src="script.js"></script>
+        
+    </body>
+</html>
