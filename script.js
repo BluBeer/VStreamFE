@@ -1,11 +1,11 @@
-const ipadd = "206.189.140.194"
+const ipadd = "avisahney.online"
 const videoPlayer = document.getElementById('videoPlayer');
 const videoSource = document.getElementById("videoSource");
 const queryParams = getQueryStringParams();
 const name = queryParams.get('name');
 
 function downloadVideo() {
-    let path = "http://" + ipadd +"/download-video/"+ name;
+    let path = "https://" + ipadd +"/download-video/"+ name;
     console.log(name + "Video is Downloading");
     window.location.href = path;
 }
@@ -16,7 +16,7 @@ function getQueryStringParams() {
 }
 
 function streamVideo(){
-        const videoPath = "http://" + ipadd+"/getVideoLink/" + name;
+        const videoPath = "https://" + ipadd+"/getVideoLink/" + name;
         console.log("videoPath :", videoPath )
         fetch(videoPath)
             .then(response => {
@@ -28,7 +28,7 @@ function streamVideo(){
                     return response.json();
                 }
             }).then(data => {
-                    const vPath = "http://"+ipadd+ data.url;
+                    const vPath = "https://"+ipadd+ data.url;
                     videoSource.setAttribute('src', vPath);
                     videoPlayer.load();
                     console.log(name + " Video is streaming successfully");
@@ -51,7 +51,7 @@ function handleVideoError() {
 
 
 function updateViews() {
-    const apiUrl = "http://"+ipadd+"/getViewCount/" + name;
+    const apiUrl = "https://"+ipadd+"/getViewCount/" + name;
 
     fetch(apiUrl)
         .then(response => response.json())
